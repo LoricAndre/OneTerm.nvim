@@ -42,6 +42,7 @@ function lsp(a)
   params.context = {includeDeclaration = true}
   local timeout = 10000
   local symbols = vim.lsp.buf_request_sync(0, a.query, params, timeout)
+  local return_value = ""
   for _, res in pairs(symbols) do
     local valid, items = pcall(unpack_lsp, res, a.type)
     if not valid then
@@ -49,10 +50,11 @@ function lsp(a)
     end
     for _, symbol in pairs(items) do
       if not string.match(symbol.text, "<Anonymous>$") then
-        print(symbol.text, symbol.filename, symbol.lnum)
+      	return_value = return_value .. symbol.filename .. " " .. symbol.lnum .. " " .. symbol.text .. "\n"
       end
     end
   end
+  return return_value
 end
 
 return {

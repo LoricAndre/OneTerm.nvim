@@ -11,8 +11,17 @@ return function(a)
   end
   local full_default_matcher = default_matcher .. "'" .. (a.preview or default_preview) .. "'" .. delimiter
   local matcher = full_default_matcher or a.matcher
+  local cmd = a.cmd
+  if type(cmd) == "function" then
+    local tmp = require'oneterm.utils'.gettmp()
+    local f = io.open(tmp .. "/fztermcmd", "w")
+    print("fke" .. a.cmd())
+    f:write(a.cmd())
+    f:close()
+    cmd = "cat " .. tmp .. "/fztermcmd"
+  end
   return require'oneterm.term'.open({
-    cmd = a.cmd,
+    cmd = cmd,
     matcher = matcher,
   })
 end

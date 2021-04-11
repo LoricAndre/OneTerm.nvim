@@ -50,14 +50,24 @@ end
 
 function references()
   return main {
-    cmd = ":lua require 'oneterm.utils'.lsp {query = 'textDocument/references', type = 'locations'}",
+    cmd = function()
+      return require'oneterm.utils'.lsp {
+      	  query = 'textDocument/references',
+	  type = 'locations'
+	}
+    end,
     preview = "bat --highlight-line {-1} -r{-1}: {-2} --color=always"
   }
 end
 
 function symbols()
   return main {
-    cmd = ":lua require'oneterm.utils'.lsp {query = 'textDocument/documentSymbol', type = 'symbols'}"
+    cmd = function()
+      return require'oneterm.utils'.lsp {
+          query = 'textDocument/documentSymbol',
+	  type = 'symbols'
+	}
+    end
   }
 end
 
