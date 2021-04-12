@@ -92,5 +92,6 @@ return {
   commits = commits,
   files_or_git_files = files_or_git_files,
   references = references,
-  symbols = symbols
+  symbols = symbols,
+  ws_symbols = ws_symbols
 }
