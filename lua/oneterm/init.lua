@@ -14,6 +14,15 @@ function git_files()
   }
 end
 
+function buffers()
+  return main {
+    cmd = function()
+      vim.cmd("ls")
+    end,
+    preview = 'bat --color=always -r{-1}: "$(echo {-3} | tr \'\"\' \'\')"'
+    output_format = '#{1}'
+  }
+
 function ag()
   return main {
     cmd = "ag --nobreak --noheading '.+' .",
@@ -87,6 +96,7 @@ end
 return {
   files = files,
   git_files = git_files,
+  buffers = buffers,
   ag = ag,
   rg = rg,
   commits = commits,
