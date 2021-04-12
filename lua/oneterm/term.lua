@@ -5,7 +5,7 @@ function open(a)
   local opt = utils.getopts()
   local tmp = utils.gettmp()
   -- create terminal
-  local term_cmd = ":term " .. a.cmd .. " | " .. a.matcher .. " | tee " .. tmp .. "/fzterm"
+  local term_cmd = ":term " .. a.cmd .. " | " .. a.matcher .. " | tee " .. tmp .. "/oneterm"
   local buf = vim.api.nvim_create_buf(false, true)
   local win = vim.api.nvim_open_win(buf, true, opt)
   vim.cmd(term_cmd)
@@ -19,7 +19,7 @@ function close(a)
     vim.api.nvim_buf_delete(a.buf, {force = true})
   end
   local tmp = utils.gettmp()
-  vim.defer_fn(function() return vim.cmd(":source " .. tmp .. "/fzterm") end, 10)
+  vim.defer_fn(function() return vim.cmd(":source " .. tmp .. "/oneterm") end, 10)
 end
 
 return {

@@ -17,10 +17,10 @@ return function(a)
   local cmd = a.cmd
   if type(cmd) == "function" then
     local tmp = require'oneterm.utils'.gettmp()
-    local f = io.open(tmp .. "/fztermcmd", "w")
+    local f = io.open(tmp .. "/onetermcmd", "w")
     f:write(a.cmd())
     f:close()
-    cmd = "cat " .. tmp .. "/fztermcmd"
+    cmd = "cat " .. tmp .. "/onetermcmd"
   end
   return require'oneterm.term'.open({
     cmd = cmd,
