@@ -101,6 +101,13 @@ function git()
   }
 end
 
+function ranger()
+  return main {
+    cmd = "ranger --choosefile=/tmp/fztermranger && true",
+    matcher = "cat /tmp/fztermranger"
+  }
+end
+
 return {
   files = files,
   git_files = git_files,
