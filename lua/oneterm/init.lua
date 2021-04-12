@@ -104,7 +104,7 @@ end
 function ranger()
   return main {
     cmd = "ranger --choosefile=/tmp/fztermranger && true",
-    matcher = "cat /tmp/fztermranger"
+    matcher = 'echo "edit $(cat /tmp/fztermranger)"'
   }
 end
 
