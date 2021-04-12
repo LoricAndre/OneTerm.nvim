@@ -22,6 +22,7 @@
 
 One terminal plugin to rule them all (eventually).
 
+[![asciicast](https://asciinema.org/a/NVAvLZA5p2mUvv8emxTWOD79o.svg)](https://asciinema.org/a/NVAvLZA5p2mUvv8emxTWOD79o)
 ## Introduction
 This is my second take at a [neovim](https://neovim.io) plugin using the terminal (first was https://github.com/LoricAndre/fzterm.nvim). <br>
 I dropped the first one because it quickly became a mess and creating another one was faster than refactoring the first one.<br>
