@@ -46,6 +46,7 @@ function lsp(a)
   for _, res in pairs(symbols) do
     local valid, items = pcall(unpack_lsp, res, a.type)
     if not valid then
+      print("LSP Error.")
       items = {}
     end
     for _, symbol in pairs(items) do

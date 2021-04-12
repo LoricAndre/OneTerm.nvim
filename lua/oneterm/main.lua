@@ -15,7 +15,6 @@ return function(a)
   if type(cmd) == "function" then
     local tmp = require'oneterm.utils'.gettmp()
     local f = io.open(tmp .. "/fztermcmd", "w")
-    print("fke" .. a.cmd())
     f:write(a.cmd())
     f:close()
     cmd = "cat " .. tmp .. "/fztermcmd"
