@@ -10,7 +10,7 @@ return function(a)
     delimiter = " -d '" .. a.delimiter .. "'"
   end
   local full_default_matcher = default_matcher .. "'" .. (a.preview or default_preview) .. "'" .. delimiter
-  local matcher = full_default_matcher or a.matcher
+  local matcher = a.matcher or full_default_matcher
   local cmd = a.cmd
   if type(cmd) == "function" then
     local tmp = require'oneterm.utils'.gettmp()
