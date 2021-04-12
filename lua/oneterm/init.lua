@@ -97,7 +97,7 @@ end
 function git()
   return main {
     cmd = "gitui && git push",
-    matcher = "xargs echo && true"
+    matcher = "true"
   }
 end
 
