@@ -44,8 +44,8 @@ function lsp(a)
   local symbols = vim.lsp.buf_request_sync(0, a.query, params, timeout)
   local return_value = ""
   for _, res in pairs(symbols) do
-    print(res)
-    local valid, items = pcall(unpack_lsp, res, a.type)
+    local valid, items = pcall(unpack_lsp,
+        {res = res, type = a.type})
     if not valid then
       print("LSP Error. ", items)
       items = {}
