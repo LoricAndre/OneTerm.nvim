@@ -101,6 +101,13 @@ function git()
   }
 end
 
+function ranger()
+  return main {
+    cmd = "ranger --choosefile=/tmp/fztermranger && true",
+    matcher = 'echo "edit $(cat /tmp/fztermranger)"'
+  }
+end
+
 return {
   files = files,
   git_files = git_files,
@@ -112,5 +119,6 @@ return {
   references = references,
   symbols = symbols,
   ws_symbols = ws_symbols,
-  git = git
+  git = git,
+  ranger = ranger
 }

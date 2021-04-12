@@ -9,7 +9,8 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \references\n
         \symbols\n
         \ws_symbols\n
-        \git
+        \git\n
+        \ranger
         \"
 endfunction
 
