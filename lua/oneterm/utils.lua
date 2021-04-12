@@ -42,6 +42,7 @@ function lsp(a)
   params.context = {includeDeclaration = true}
   local timeout = 10000
   local symbols = vim.lsp.buf_request_sync(0, a.query, params, timeout)
+  print(symbols)
   local return_value = ""
   for _, res in pairs(symbols) do
     local valid, items = pcall(unpack_lsp, res, a.type)
