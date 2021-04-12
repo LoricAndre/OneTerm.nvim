@@ -4,6 +4,7 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \files_or_git_files\n
         \ag\n
         \rg\n
+        \commits\n
         \references\n
         \symbols\n
         \ws_symbols
