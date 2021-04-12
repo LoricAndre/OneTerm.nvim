@@ -17,11 +17,12 @@ end
 function buffers()
   return main {
     cmd = function()
-      vim.cmd("ls")
+      return vim.api.nvim_exec("ls", true)
     end,
-    preview = 'bat --color=always -r{-1}: "$(echo {-3} | tr \'\"\' \'\')"'
-    output_format = '#{1}'
+    preview = 'bat --color=always -r{-1}: $(echo {-3} | tr -d \\")',
+    output_format = '\\\\#{1}'
   }
+end
 
 function ag()
   return main {
