@@ -22,6 +22,7 @@ function buffers()
     preview = 'bat --color=always -r{-1}: "$(echo {-3} | tr \'\"\' \'\')"'
     output_format = '#{1}'
   }
+end
 
 function ag()
   return main {
