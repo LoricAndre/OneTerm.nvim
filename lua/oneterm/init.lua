@@ -17,7 +17,8 @@ end
 function buffers()
   return main {
     cmd = function()
-      vim.api.nvim_exec("ls")
+    f:close()
+      vim.api.nvim_exec("ls", true)
     end,
     preview = 'bat --color=always -r{-1}: "$(echo {-3} | tr \'\"\' \'\')"',
     output_format = '#{1}'
