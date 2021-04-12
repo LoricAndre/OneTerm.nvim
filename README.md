@@ -69,11 +69,11 @@ The way this function works is very simple : if `cmd` is a function, it is ran a
 Check [init.lua](https://github.com/LoricAndre/oneterm/blob/main/lua/oneterm/init.lua) for examples
 
 ## TODO
- - [ ] Add new commands
-  - [ ] lines for lines in all loaded buffers
-  - [ ] blines for lines in current buffer
-  - [ ] branches for git branches (and checkout)
-  - [ ] Anything you might need
+ - [ ] Add new commands :
+    - [ ] lines for lines in all loaded buffers
+    - [ ] blines for lines in current buffer
+    - [ ] branches for git branches (and checkout)
+    - [ ] Anything you might need
 - [ ] Add a way to ignore files, e.g. for `files`, `rg` and `ag`
 
 
