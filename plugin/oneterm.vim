@@ -8,7 +8,8 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \commits\n
         \references\n
         \symbols\n
-        \ws_symbols
+        \ws_symbols\n
+        \git
         \"
 endfunction
 

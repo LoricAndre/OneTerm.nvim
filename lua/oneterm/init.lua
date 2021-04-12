@@ -94,6 +94,13 @@ function ws_symbols()
   }
 end
 
+function git()
+  return main {
+    cmd = "gitui && git push",
+    matcher = "true"
+  }
+end
+
 return {
   files = files,
   git_files = git_files,
@@ -104,5 +111,6 @@ return {
   files_or_git_files = files_or_git_files,
   references = references,
   symbols = symbols,
-  ws_symbols = ws_symbols
+  ws_symbols = ws_symbols,
+  git = git
 }
