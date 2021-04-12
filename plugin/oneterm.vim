@@ -6,6 +6,7 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \rg\n
         \references\n
         \symbols
+        \ws_symbols
         \"
 endfunction
 

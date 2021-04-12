@@ -51,8 +51,7 @@ function lsp(a)
       items = {}
     end
     for _, symbol in pairs(items) do
-      print("res", return_value)
-      if not string.match(symbol.text, "<Anonymous>$") then
+    if not string.match(symbol.text, "<Anonymous>$") then
       	return_value = return_value .. symbol.filename .. " " .. symbol.lnum .. " " .. symbol.text .. "\n"
       end
     end

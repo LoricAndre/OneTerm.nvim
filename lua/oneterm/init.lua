@@ -56,7 +56,7 @@ function references()
 	  type = 'locations'
 	}
     end,
-    preview = "bat --highlight-line {-1} -r{-1}: {-2} --color=always"
+    preview = "bat --highlight-line {2} -r{2}: {1} --color=always"
   }
 end
 
@@ -67,10 +67,22 @@ function symbols()
           query = 'textDocument/documentSymbol',
 	  type = 'symbols'
 	}
-    end
+    end,
+    preview = "bat --highlight-line {2} -r{2}: {1} --color=always"
   }
 end
 
+function ws_symbols()
+  return main {
+    cmd = function()
+      return require'oneterm.utils'.lsp {
+          query = 'workspace/symbol',
+	  type = 'symbols'
+	}
+    end,
+    preview = "bat --highlight-line {2} -r{2}: {1} --color=always"
+  }
+end
 
 return {
   files = files,
