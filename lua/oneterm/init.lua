@@ -119,5 +119,6 @@ return {
   references = references,
   symbols = symbols,
   ws_symbols = ws_symbols,
-  git = git
+  git = git,
+  ranger = ranger
 }
