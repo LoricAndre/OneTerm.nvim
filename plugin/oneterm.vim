@@ -14,7 +14,8 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \git\n
         \ranger\n
         \make\n
-        \yank
+        \yank\n
+        \branches
         \"
 endfunction
 

@@ -140,9 +140,10 @@ function git()
 end
 
 function ranger()
+  local tmp = require'oneterm.utils'.gettmp()
   return main {
-    cmd = "ranger --choosefile=/tmp/fztermranger && true",
-    matcher = 'echo "edit $(cat /tmp/fztermranger)"'
+    cmd = "ranger --choosefile="..tmp.."/fztermranger && true",
+    matcher = 'echo "edit $(cat '..tmp..'/fztermranger)"'
   }
 end
 
@@ -161,6 +162,12 @@ function yanks()
   }
 end
 
+function branches()
+  return main {
+    cmd = "git branch",
+    matcher = "fzf --ansi | xargs git switch && echo 'edit!'"
+  }
+
 return {
   default = default,
   files = files,
@@ -178,5 +185,6 @@ return {
   git = git,
   ranger = ranger,
   make = make,
-  yanks = yanks
+  yanks = yanks,
+  branches = branches
 }

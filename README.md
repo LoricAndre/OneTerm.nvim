@@ -55,6 +55,7 @@ Install the plugin using your favorite package manager (or whatever way you deem
  - `ranger` : open ranger and edit selected file
  - `make` : list makefile targets and run selected
  - `yank` : list yank history and paste it at the cursor on `<CR>` or `<C-p>`, yank to `+` register on `<C-y>`
+ - `branches` : list git branches and switch to selected
 
 ## Configuration
 OneTerm's window is configurable using the following variables. You can set them using either `let g:var` from vimscript or `vim.g.var` from lua.

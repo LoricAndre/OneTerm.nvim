@@ -50,6 +50,7 @@ command. Completion is enabled.
  - `ranger` : open ranger and edit selected file
  - `make` : list makefile targets and run selected
  - `yank` : list yank history and paste it at the cursor on `<CR>` or `<C-p>`, yank to `+` register on `<C-y>`
+ - `branches` : list git branches and switch to selected
 
 ===============================================================================
 5. Configuration                                        *oneterm-configuration*
