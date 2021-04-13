@@ -13,7 +13,8 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \ws_symbols\n
         \git\n
         \ranger\n
-        \make
+        \make\n
+        \yank
         \"
 endfunction
 
@@ -27,3 +28,7 @@ endfunction
 
 
 com! -nargs=? -complete=custom,Compl OneTerm call Oneterm_cmd(<f-args>)
+
+if g:oneterm_yank
+  lua require'oneterm.utils'.init_yank()
+endif

@@ -48,6 +48,8 @@ command. Completion is enabled.
  - `git` : open gitui and push changes on exit
    (gitui's push feature isn't working for me, I'd love feedback on this)
  - `ranger` : open ranger and edit selected file
+ - `make` : list makefile targets and run selected
+ - `yank` : list yank history and paste it at the cursor on `<CR>` or `<C-p>`, yank to `+` register on `<C-y>`
 
 ===============================================================================
 5. Configuration                                        *oneterm-configuration*
@@ -60,7 +62,7 @@ You can set them using either |g:| from vimscript or |vim.g| from |lua|.
    and 1 (window fills the editor)
  - `oneterm_margin_left` and `oneterm_margin_top` set the margins,
    these are ratios and should be set to numbers between 0 and 1 like the ratios
-
+ - `oneterm_yank` needs to be set to |true| to be able to use the yank command !
 ===============================================================================
 6. Framework                                                *oneterm-framework*
 Each of the commands calls the same |lua| function,

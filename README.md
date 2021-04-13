@@ -54,12 +54,14 @@ Install the plugin using your favorite package manager (or whatever way you deem
  - `git` : open gitui and push changes on exit (gitui's push feature isn't working for me, I'd love feedback on this)
  - `ranger` : open ranger and edit selected file
  - `make` : list makefile targets and run selected
+ - `yank` : list yank history and paste it at the cursor on `<CR>` or `<C-p>`, yank to `+` register on `<C-y>`
 
 ## Configuration
 OneTerm's window is configurable using the following variables. You can set them using either `let g:var` from vimscript or `vim.g.var` from lua.
  - `oneterm_width` and `oneterm_height` set the width and height of the window, in absolute columns or rows
  - `oneterm_width_ratio` and `oneterm_height_ratio` set the width and height ratios. These should be set to numbers between 0 (for no window) and 1 (window fills the editor)
  - `oneterm_margin_left` and `oneterm_margin_top` set the margins, these are ratios and should be set to numbers between 0 and 1 like the ratios
+ - `oneterm_yank` needs to be set to |true| to be able to use the yank command !
 
 ## Using the framework
 Each of the commands calls the same lua function, accessible using `lua require('oneterm').main(arg_object)`.<br>
@@ -79,11 +81,11 @@ Check [init.lua](https://github.com/LoricAndre/oneterm/blob/main/lua/oneterm/ini
     - [x] lines for lines in all loaded buffers
     - [x] blines for lines in current buffer
     - [ ] branches for git branches (and checkout)
-    - [ ] Yanks
-    - [c] Makefile targets
+    - [x] Yanks
+    - [x] Makefile targets
     - [ ] Anything you might need
 - [ ] Add a way to ignore files, e.g. for `files`, `rg` and `ag`
-- [ ] Add configuration for prompt & other visual aspects
+- [ ] Add configuration for prompt & other visual aspects, including border in latest version.
 
 
 

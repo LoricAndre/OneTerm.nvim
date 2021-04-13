@@ -59,7 +59,7 @@ function lsp(a)
   return return_value
 end
 
-function init_yanks()
+function init_yank()
   return vim.api.nvim_exec([[
     augroup Oneterm
       au!
