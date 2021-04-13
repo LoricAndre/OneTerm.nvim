@@ -44,6 +44,7 @@ function lines()
 end
 
 function blines()
+  local file = vim.fn.expand("%")
   return main {
     cmd = function()
       local lines = ""
@@ -52,9 +53,9 @@ function blines()
       end
       return lines
     end,
-    preview = 'bat --color=always -r{2}: ${1}',
+    preview = 'bat --color=always -r{1}: ' .. file
     delimiter = ':',
-    output_format = '+{1} ' .. vim.fn.expand("%")
+    output_format = '+{1} ' .. file
   }
 end
 
