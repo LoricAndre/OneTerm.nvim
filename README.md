@@ -53,6 +53,7 @@ Install the plugin using your favorite package manager (or whatever way you deem
  - `ws_symbols` : same as `symbols` but for the entire workspace
  - `git` : open gitui and push changes on exit (gitui's push feature isn't working for me, I'd love feedback on this)
  - `ranger` : open ranger and edit selected file
+ - `make` : list makefile targets and run selected
 
 ## Configuration
 OneTerm's window is configurable using the following variables. You can set them using either `let g:var` from vimscript or `vim.g.var` from lua.
@@ -79,7 +80,7 @@ Check [init.lua](https://github.com/LoricAndre/oneterm/blob/main/lua/oneterm/ini
     - [x] blines for lines in current buffer
     - [ ] branches for git branches (and checkout)
     - [ ] Yanks
-    - [ ] Makefile targets
+    - [c] Makefile targets
     - [ ] Anything you might need
 - [ ] Add a way to ignore files, e.g. for `files`, `rg` and `ag`
 - [ ] Add configuration for prompt & other visual aspects
