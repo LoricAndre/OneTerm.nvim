@@ -72,5 +72,5 @@ return {
   getopts = getopts,
   gettmp = gettmp,
   lsp = lsp,
-  init_yanks = init_yanks
+  init_yank = init_yank
 }
