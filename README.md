@@ -74,6 +74,7 @@ Check [init.lua](https://github.com/LoricAndre/oneterm/blob/main/lua/oneterm/ini
     - [ ] lines for lines in all loaded buffers
     - [ ] blines for lines in current buffer
     - [ ] branches for git branches (and checkout)
+    - [ ] Yanks
     - [ ] Anything you might need
 - [ ] Add a way to ignore files, e.g. for `files`, `rg` and `ag`
 - [ ] Add configuration for prompt & other visual aspects
