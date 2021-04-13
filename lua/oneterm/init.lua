@@ -167,6 +167,7 @@ function branches()
     cmd = "git branch",
     matcher = "fzf --ansi | xargs git switch && echo 'edit!'"
   }
+end
 
 return {
   default = default,
