@@ -24,6 +24,23 @@ function buffers()
   }
 end
 
+function lines()
+  return main {
+    cmd = function()
+      lines = ""
+      for _,buf in pairs(vim.api.nvim_list_bufs())
+        file = vim.fn.expand("#" .. buf)
+        for nr,line in pairs(vim.nvim_buf_get_lines(buf, 0, -1, false))
+          lines = lines .. file .. ":" .. nr .. ":" .. line .. "\n"
+        end
+      end
+    end,
+    preview = 'bat --color=always -r{2}: ${1}',
+    delimiter = ':',
+    output_format = '+{2} {1}'
+  }
+end
+
 function ag()
   return main {
     cmd = "ag --nobreak --noheading '.+' .",
@@ -112,6 +129,8 @@ return {
   files = files,
   git_files = git_files,
   buffers = buffers,
+  lines = lines,
+  blines = blines,
   ag = ag,
   rg = rg,
   commits = commits,
