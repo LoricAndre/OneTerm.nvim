@@ -8,6 +8,7 @@ function files()
   }
 end
 
+
 function git_files()
   return main {
     cmd = "git ls-files"
@@ -39,6 +40,20 @@ function lines()
     preview = 'bat --color=always -r{2}: ${1}',
     delimiter = ':',
     output_format = '+{2} {1}'
+  }
+end
+
+function blines()
+  return main {
+    cmd = function()
+      lines = ""
+      for nr,line in pairs(vim.api.nvim_buf_get_lines(0, 0, -1, false)) do
+        lines = lines .. nr .. ":" .. line .. "\n"
+      end
+    end,
+    preview = 'bat --color=always -r{2}: ${1}',
+    delimiter = ':',
+    output_format = '+{1} ' .. vim.fn.expand("%")
   }
 end
 
