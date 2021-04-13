@@ -38,6 +38,7 @@ Credits to all the devs of those projects :heart:.
 Install the plugin using your favorite package manager (or whatever way you deem best). Then, all you have to do is type `:OneTerm <Tab>` and browse through the commands.
 
 ## Implemented commands
+ - empty : default fzf command, defined by `$FZF_DEFAULT_COMMAND`
  - `files` : list files using ripgrep
  - `git_files` : list files using `git ls-files`
  - `files_or_git_files` : list files using either method above based on the presence of a `.git` dir in nvim's current `pwd`.
@@ -71,7 +72,7 @@ Check [init.lua](https://github.com/LoricAndre/oneterm/blob/main/lua/oneterm/ini
 
 ## TODO
  - [ ] Add new commands :
-    - [ ] main for use with `$FZF_DEFAULT_COMMAND`
+    - [x] default for use with `$FZF_DEFAULT_COMMAND`
     - [x] lines for lines in all loaded buffers
     - [x] blines for lines in current buffer
     - [ ] branches for git branches (and checkout)

@@ -16,4 +16,13 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \"
 endfunction
 
-com! -nargs=? -complete=custom,Compl OneTerm lua require'oneterm'["<args>"]()
+function! Oneterm_cmd(...)
+  if a:0 > 0
+    call luaeval("require'oneterm'['" . a:1 . "']()")
+  else
+    lua require'oneterm'.default()
+  endif
+endfunction
+
+
+com! -nargs=? -complete=custom,Compl OneTerm call Oneterm_cmd(<f-args>)
