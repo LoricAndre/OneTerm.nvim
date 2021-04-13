@@ -149,7 +149,7 @@ end
 
 function make()
   return main {
-    cmd = "make -qp | awk -F':' '/^[a-zA-Z0-9][^$\#\\/\\t=]*:([^=]|$)/ {split($1,A,/ /);for(i in A)print A[i]}'",
+    cmd = "make -qp | awk -F':' '/^[a-zA-Z0-9][^$\\#\\/\\t=]*:([^=]|$)/ {split($1,A,/ /);for(i in A)print A[i]}'",
     matcher = "xargs make && echo 'press any key to continue' && read",
     format = ""
   }
