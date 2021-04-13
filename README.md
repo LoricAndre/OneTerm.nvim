@@ -43,6 +43,8 @@ Install the plugin using your favorite package manager (or whatever way you deem
  - `git_files` : list files using `git ls-files`
  - `files_or_git_files` : list files using either method above based on the presence of a `.git` dir in nvim's current `pwd`.
  - `buffers` : list vim buffers
+ - `lines` : show lines of all active buffers
+ - `blines` : show lines from current buffer
  - `ag` : find lines in files using the silver searcher
  - `rg` : find lines in files using ripgrep
  - `commits` : browse git log (nothing special happens on exit)
