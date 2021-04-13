@@ -3,6 +3,8 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \git_files\n
         \files_or_git_files\n
         \buffers\n
+        \lines\n
+        \blines\n
         \ag\n
         \rg\n
         \commits\n
