@@ -46,11 +46,11 @@ end
 function blines()
   return main {
     cmd = function()
-      lines = ""
+      local lines = ""
       for nr,line in pairs(vim.api.nvim_buf_get_lines(0, 0, -1, false)) do
         lines = lines .. nr .. ":" .. line .. "\n"
       end
-      return blines
+      return lines
     end,
     preview = 'bat --color=always -r{2}: ${1}',
     delimiter = ':',
