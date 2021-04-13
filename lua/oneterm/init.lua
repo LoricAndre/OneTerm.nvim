@@ -158,8 +158,9 @@ function make()
 end
 
 function yanks()
+  local tmp = require'oneterm.utils'.gettmp()
   return main {
-    cmd = "cat " .. require'oneterm.utils'.gettmp() .. "/onetermyanks",
+    cmd = "cat " .. tmp .. "/onetermyanks",
     matcher = "fzf --bind 'ctrl-p:execute(echo r !echo {2}),ctrl-y:execute(echo let @+={2})'"
   }
 end
