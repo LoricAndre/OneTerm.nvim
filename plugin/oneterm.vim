@@ -12,7 +12,8 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \symbols\n
         \ws_symbols\n
         \git\n
-        \ranger
+        \ranger\n
+        \make
         \"
 endfunction
 

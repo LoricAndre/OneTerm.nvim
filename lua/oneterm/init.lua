@@ -170,5 +170,6 @@ return {
   symbols = symbols,
   ws_symbols = ws_symbols,
   git = git,
-  ranger = ranger
+  ranger = ranger,
+  make = make
 }
