@@ -81,7 +81,7 @@ Check [init.lua](https://github.com/LoricAndre/oneterm/blob/main/lua/oneterm/ini
     - [x] default for use with `$FZF_DEFAULT_COMMAND`
     - [x] lines for lines in all loaded buffers
     - [x] blines for lines in current buffer
-    - [ ] branches for git branches (and checkout)
+    - [x] branches for git branches (and checkout)
     - [x] Yanks
     - [x] Makefile targets
     - [ ] Anything you might need
