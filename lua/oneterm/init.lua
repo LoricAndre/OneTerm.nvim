@@ -29,8 +29,11 @@ function lines()
     cmd = function()
       lines = ""
       for _,buf in pairs(vim.api.nvim_list_bufs()) do
+        print(buf)
         file = vim.fn.expand("#" .. buf)
+        print(file)
         for nr,line in pairs(vim.api.nvim_buf_get_lines(buf, 0, -1, false)) do
+          print(line)
           lines = lines .. file .. ":" .. nr .. ":" .. line .. "\n"
         end
       end
