@@ -3,7 +3,7 @@ local main = require 'oneterm.main'
 
 
 function default()
-  return main()
+  return main{}
 end
 
 function files()
