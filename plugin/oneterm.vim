@@ -30,6 +30,6 @@ endfunction
 
 com! -nargs=? -complete=custom,Compl OneTerm call Oneterm_cmd(<f-args>)
 
-if g:oneterm_yank
+if exists("g:oneterm_yank") && g:oneterm_yank
   lua require'oneterm.utils'.init_yank()
 endif
