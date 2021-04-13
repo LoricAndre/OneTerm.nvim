@@ -7,6 +7,7 @@ function open(a)
   local cmd = a.cmd
   if a.cmd ~= nil then
     cmd = cmd .. " | "
+  end
   -- create terminal
   local term_cmd = ":term " .. cmd .. a.matcher .. " | tee " .. tmp .. "/oneterm"
   local buf = vim.api.nvim_create_buf(false, true)
