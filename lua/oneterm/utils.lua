@@ -59,8 +59,18 @@ function lsp(a)
   return return_value
 end
 
+function init_yanks()
+  return vim.api.nvim_eval([[
+    augroup Oneterm
+      au!
+      au TextYankPost * redir! >> ]] .. gettmp() .. [[/onetermyanks | echo v:event.regcontents[0] | redir end
+    augroup END
+  ]])
+end
+
 return {
   getopts = getopts,
   gettmp = gettmp,
-  lsp = lsp
+  lsp = lsp,
+  init_yanks = init_yanks
 }

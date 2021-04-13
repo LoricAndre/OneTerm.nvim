@@ -1,6 +1,9 @@
 local vim = vim
 local main = require 'oneterm.main'
 
+if vim.g.oneterm_yank then
+  require'oneterm.utils'.init_yanks()
+end
 
 function default()
   return main{}
@@ -150,8 +153,14 @@ end
 function make()
   return main {
     cmd = "make -qp | awk -F':' '/^[a-zA-Z0-9][^$\\#\\/\\t=]*:([^=]|$)/ {split($1,A,/ /);for(i in A)print A[i]}'",
-    matcher = "fzf | xargs make && echo 'press any key to continue' && read",
-    format = ""
+    matcher = "fzf | xargs make && echo 'press any key to continue' && read"
+  }
+end
+
+function yanks()
+  return main {
+    cmd = "cat " .. require'oneterm.utils'.gettmp() .. "/onetermyanks",
+    matcher = "fzf --bind 'ctrl-p:execute(echo r !echo {2}),ctrl-y:execute(echo let @+={2})'"
   }
 end
 
@@ -171,5 +180,6 @@ return {
   ws_symbols = ws_symbols,
   git = git,
   ranger = ranger,
-  make = make
+  make = make,
+  yanks = yanks
 }
