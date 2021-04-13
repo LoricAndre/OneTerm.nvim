@@ -1,10 +1,6 @@
 local vim = vim
 local main = require 'oneterm.main'
 
-if vim.g.oneterm_yank then
-  require'oneterm.utils'.init_yanks()
-end
-
 function default()
   return main{}
 end
