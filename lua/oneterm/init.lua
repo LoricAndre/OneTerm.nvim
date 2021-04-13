@@ -2,6 +2,10 @@ local vim = vim
 local main = require 'oneterm.main'
 
 
+function default()
+  return main()
+end
+
 function files()
   return main {
     cmd = "rg --files --hidden ."

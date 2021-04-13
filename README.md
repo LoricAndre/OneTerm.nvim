@@ -71,8 +71,9 @@ Check [init.lua](https://github.com/LoricAndre/oneterm/blob/main/lua/oneterm/ini
 
 ## TODO
  - [ ] Add new commands :
-    - [ ] lines for lines in all loaded buffers
-    - [ ] blines for lines in current buffer
+    - [ ] main for use with `$FZF_DEFAULT_COMMAND`
+    - [x] lines for lines in all loaded buffers
+    - [x] blines for lines in current buffer
     - [ ] branches for git branches (and checkout)
     - [ ] Yanks
     - [ ] Makefile targets

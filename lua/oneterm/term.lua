@@ -4,8 +4,11 @@ local utils = require'oneterm.utils'
 function open(a)
   local opt = utils.getopts()
   local tmp = utils.gettmp()
+  local cmd = a.cmd
+  if a.cmd ~= nil then
+    cmd = cmd .. " | "
   -- create terminal
-  local term_cmd = ":term " .. a.cmd .. " | " .. a.matcher .. " | tee " .. tmp .. "/oneterm"
+  local term_cmd = ":term " .. cmd .. a.matcher .. " | tee " .. tmp .. "/oneterm"
   local buf = vim.api.nvim_create_buf(false, true)
   local win = vim.api.nvim_open_win(buf, true, opt)
   vim.cmd(term_cmd)
