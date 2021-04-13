@@ -4,8 +4,8 @@ local utils = require'oneterm.utils'
 function open(a)
   local opt = utils.getopts()
   local tmp = utils.gettmp()
-  local cmd = a.cmd
-  if a.cmd ~= nil then
+  local cmd = a.cmd or ""
+  if cmd ~= "" then
     cmd = cmd .. " | "
   end
   -- create terminal
