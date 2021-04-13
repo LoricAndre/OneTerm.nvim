@@ -16,4 +16,4 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \"
 endfunction
 
-com! -nargs=1 -complete=custom,Compl OneTerm lua require'oneterm'["<args>"]()
+com! -nargs=? -complete=custom,Compl OneTerm lua require'oneterm'["<args>"]()
