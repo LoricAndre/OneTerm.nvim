@@ -148,7 +148,7 @@ function ranger()
 end
 
 return {
-  "" = default,
+  default = default,
   files = files,
   git_files = git_files,
   buffers = buffers,
