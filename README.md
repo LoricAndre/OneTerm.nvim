@@ -62,7 +62,7 @@ OneTerm's window is configurable using the following variables. You can set them
  - `oneterm_width` and `oneterm_height` set the width and height of the window, in absolute columns or rows
  - `oneterm_width_ratio` and `oneterm_height_ratio` set the width and height ratios. These should be set to numbers between 0 (for no window) and 1 (window fills the editor)
  - `oneterm_margin_left` and `oneterm_margin_top` set the margins, these are ratios and should be set to numbers between 0 and 1 like the ratios
- - `oneterm_yank` needs to be set to |true| to be able to use the yank command !
+ - `oneterm_yank` needs to be set to true to be able to use the yank command !
  - `oneterm_ignore` is a table/array of gitignore-type patterns.
 
 ## Using the framework
