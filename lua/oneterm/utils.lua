@@ -17,7 +17,7 @@ function getopts()
       style = 'minimal'
     }
     for k,v in pairs(vim.g.oneterm_options or {}) do
-      opt[k] = b
+      opt[k] = v
     end
     return opt
 end
