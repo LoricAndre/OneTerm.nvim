@@ -10,8 +10,8 @@ function getopts()
     local height = vim.g.oneterm_height or {[false] = 0.5}
     local width = math.floor(editor_width * width[false])
     local height = math.floor(editor_height * height[false])
-    local row = math.floor(2 * x_pos[false] * editor_width - width)
-    local col = math.floor(2 * y_pos[false] * editor_height - height)
+    local row = math.floor(x_pos[false] * editor_width - width / 2)
+    local col = math.floor(y_pos[false] * editor_height - height / 2)
     local opt = {
       relative = 'editor',
       row = row,
