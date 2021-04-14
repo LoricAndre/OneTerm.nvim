@@ -8,8 +8,9 @@ return function(a)
     .. ")+abort,esc:abort,ctrl-v:execute(echo vsplit " .. output_format 
     .. ")+abort,ctrl-t:execute(echo tabnew " .. output_format .. ")+abort'"
   if vim.g.oneterm_fzf_prompt ~= nil then
-    default_matcher = default_matcher .. " --preview '" .. vim.g.oneterm_fzf_prompt .. "'"
+    default_matcher = default_matcher .. " --prompt '" .. vim.g.oneterm_fzf_prompt .. "'"
   end
+  default_matcher = default_matcher .. " --preview "
   local default_preview = "bat --color=always -n {}"
   local delimiter = ""
   if a.delimiter ~= nil then
