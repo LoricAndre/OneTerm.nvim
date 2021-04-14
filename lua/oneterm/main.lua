@@ -7,7 +7,7 @@ return function(a)
     .. ")+abort,enter:execute(echo edit " .. output_format 
     .. ")+abort,esc:abort,ctrl-v:execute(echo vsplit " .. output_format 
     .. ")+abort,ctrl-t:execute(echo tabnew " .. output_format .. ")+abort'"
-  if vim.g.oneterm_fzf_prompt then
+  if vim.g.oneterm_fzf_prompt ~= nil then
     default_matcher = default_matcher .. " --preview '" .. vim.g.oneterm_fzf_prompt .. "'"
   end
   local default_preview = "bat --color=always -n {}"
