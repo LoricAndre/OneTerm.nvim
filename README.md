@@ -60,7 +60,7 @@ Install the plugin using your favorite package manager (or whatever way you deem
 ## Configuration
 OneTerm's window is configurable using the following variables. You can set them using either `let g:var` from vimscript or `vim.g.var` from lua.
  - `oneterm_width` and `oneterm_height` set the width and height ratios. These should be set to numbers between 0 (for no window) and 1 (window fills the editor)
- - `oneterm_margin_left` and `oneterm_margin_top` set the margins, these are ratios and should be set to numbers between 0 and 1 like above
+ - `oneterm_x_pos` and `oneterm_y_pos` set the position of the center of the window, these are ratios and should be set to numbers between 0 and 1, (0, 0) meaning top right and (1, 1) bottom left
  - `oneterm_yank` needs to be set to true to be able to use the yank command !
  - `oneterm_ignore` is an array of gitignore-type patterns
  - `oneterm_fzf_prompt` is the prompt used by fzf in oneterm

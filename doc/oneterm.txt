@@ -49,7 +49,8 @@ command. Completion is enabled.
    (gitui's push feature isn't working for me, I'd love feedback on this)
  - `ranger` : open ranger and edit selected file
  - `make` : list makefile targets and run selected
- - `yank` : list yank history and paste it at the cursor on `<CR>` or `<C-p>`, yank to `+` register on `<C-y>`
+ - `yank` : list yank history and paste it at the cursor on `<CR>` or `<C-p>`
+   , yank it to `+` register on `<C-y>`
  - `branches` : list git branches and switch to selected
 
 ===============================================================================
@@ -58,22 +59,31 @@ OneTerm's window is configurable using the following |variables|.
 You can set them using either |g:| from vimscript or |vim.g| from |lua|.
  - `oneterm_width` and `oneterm_height` set the width and height of the window,
    in absolute columns or rows
- - `oneterm_width_ratio` and `oneterm_height_ratio` set the width and height ratios. 
-   These should be set to numbers between 0 (for no window)
-   and 1 (window fills the editor)
+ - `oneterm_x_pos` and `oneterm_y_pos` set the position of the center of the window,
+   these are ratios and should be set to numbers between 0 and 1,
+   (0, 0) meaning top right and (1, 1) bottom left
  - `oneterm_margin_left` and `oneterm_margin_top` set the margins,
    these are ratios and should be set to numbers between 0 and 1 like the ratios
  - `oneterm_yank` needs to be set to |true| to be able to use the yank command !
  - `oneterm_ignore` is a table/array of gitignore-type patterns.
  - `oneterm_fzf_prompt` is the prompt used by fzf in oneterm
- - `oneterm_options` is a dictionary/table of window options, see |nvim_open_win| for details
+ - `oneterm_options` is a dictionary/table of window options,
+   see |nvim_open_win| for details
 ===============================================================================
 6. Framework                                                *oneterm-framework*
 Each of the commands calls the same |lua| function,
 accessible using `lua require('oneterm').main(arg_object)`.
 `arg_object` should be an object, with the following keys :
- - `cmd` (required) : this can be either a string, representing a shell command `"git ls-files"` for example or a lua function, like `function() return vim.api.nvim_exec("ls", true) end`
- - `preview` (optional, defaults to `"bat --color=always -n {}"`) : this is a string containing the `--preview` argument for fzf (see `man fzf` for more details)
- - `matcher` (optional, defaults to `fzf` with args) : this can be set to replace fzf with any other matcher, or `xargs echo` to just use the result of `cmd`
- - `delimiter` (optional, defaults to awk-style) : this can be used to set fzf's field delimiter (see `man fzf`) for details
- - `output_format` (optional, defaults to `"{}"`)this is a string, using fzf-style argument-replacement
+ - `cmd` (required) : this can be either a string,
+   representing a shell command `"git ls-files"` for example 
+   or a lua function, like `function() return vim.api.nvim_exec("ls", true) end`
+ - `preview` (optional, defaults to `"bat --color=always -n {}"`) : 
+   this is a string containing the `--preview` argument for fzf 
+   (see `man fzf` for more details)
+ - `matcher` (optional, defaults to `fzf` with args) : 
+   this can be set to replace fzf with any other matcher,
+   or `xargs echo` to just use the result of `cmd`
+ - `delimiter` (optional, defaults to awk-style) : 
+   this can be used to set fzf's field delimiter (see `man fzf`) for details
+ - `output_format` (optional, defaults to `"{}"`) : 
+   this is a string, using fzf-style argument-replacement
