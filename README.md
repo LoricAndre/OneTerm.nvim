@@ -59,11 +59,12 @@ Install the plugin using your favorite package manager (or whatever way you deem
 
 ## Configuration
 OneTerm's window is configurable using the following variables. You can set them using either `let g:var` from vimscript or `vim.g.var` from lua.
- - `oneterm_width` and `oneterm_height` set the width and height of the window, in absolute columns or rows
- - `oneterm_width_ratio` and `oneterm_height_ratio` set the width and height ratios. These should be set to numbers between 0 (for no window) and 1 (window fills the editor)
- - `oneterm_margin_left` and `oneterm_margin_top` set the margins, these are ratios and should be set to numbers between 0 and 1 like the ratios
+ - `oneterm_width` and `oneterm_height` set the width and height ratios. These should be set to numbers between 0 (for no window) and 1 (window fills the editor)
+ - `oneterm_margin_left` and `oneterm_margin_top` set the margins, these are ratios and should be set to numbers between 0 and 1 like above
  - `oneterm_yank` needs to be set to true to be able to use the yank command !
- - `oneterm_ignore` is a table/array of gitignore-type patterns.
+ - `oneterm_ignore` is an array of gitignore-type patterns
+ - `oneterm_fzf_prompt` is the prompt used by fzf in oneterm
+ - `oneterm_options` is a dictionary/table of window options, see `:help nvim_open_win` for details
 
 ## Using the framework
 Each of the commands calls the same lua function, accessible using `lua require('oneterm').main(arg_object)`.<br>
@@ -87,7 +88,7 @@ Check [init.lua](https://github.com/LoricAndre/oneterm/blob/main/lua/oneterm/ini
     - [x] Makefile targets
     - [ ] Add anything you might need [here](https://github.com/LoricAndre/oneterm/issues/2)
 - [x] Add a way to ignore files, e.g. for `files`, `rg` and `ag`
-- [ ] Add configuration for prompt & other visual aspects, including border in latest version.
+- [x] Add configuration for prompt & other visual aspects, including border in latest version.
 
 
 

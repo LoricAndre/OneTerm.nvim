@@ -65,6 +65,8 @@ You can set them using either |g:| from vimscript or |vim.g| from |lua|.
    these are ratios and should be set to numbers between 0 and 1 like the ratios
  - `oneterm_yank` needs to be set to |true| to be able to use the yank command !
  - `oneterm_ignore` is a table/array of gitignore-type patterns.
+ - `oneterm_fzf_prompt` is the prompt used by fzf in oneterm
+ - `oneterm_options` is a dictionary/table of window options, see |nvim_open_win| for details
 ===============================================================================
 6. Framework                                                *oneterm-framework*
 Each of the commands calls the same |lua| function,
