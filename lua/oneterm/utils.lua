@@ -4,8 +4,8 @@ function getopts()
     -- Window geometry
     local editor_width = vim.api.nvim_get_option('columns')
     local editor_height = vim.api.nvim_get_option('lines')
-    local margin_top = vim.g.oneterm_margin_top or {[false] = 0.125}
-    local margin_left = vim.g.oneterm_margin_left or {[false] = 0.25}
+    local margin_top = vim.g.oneterm_margin_top or {[false] = 0.25}
+    local margin_left = vim.g.oneterm_margin_left or {[false] = 0.125}
     local width = vim.g.oneterm_width or {[false] = 0.75}
     local height = vim.g.oneterm_height or {[false] = 0.5}
     local win_width = math.floor(editor_width * width[false])
