@@ -16,6 +16,9 @@ function getopts()
       height = win_height,
       style = 'minimal'
     }
+    for k,v in pairs(vim.g.oneterm_options or {}) do
+      opt[k] = b
+    end
     return opt
 end
 
