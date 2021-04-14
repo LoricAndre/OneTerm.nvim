@@ -16,8 +16,8 @@ function getopts()
       relative = 'editor',
       row = row,
       col = col,
-      width = win_width,
-      height = win_height,
+      width = width,
+      height = height,
       style = 'minimal'
     }
     for k,v in pairs(vim.g.oneterm_options or {}) do
