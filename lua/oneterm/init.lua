@@ -7,7 +7,7 @@ end
 
 function files()
   return main {
-    cmd = "rg --files --hidden ."
+    cmd = "rg --files --hidden ." .. require'oneterm.utils'.build_ignore_rg(vim.g.oneterm_ignore)
   }
 end
 
@@ -64,7 +64,7 @@ end
 
 function ag()
   return main {
-    cmd = "ag --nobreak --noheading '.+' .",
+    cmd = "ag --nobreak --noheading '.+' ." .. require'oneterm.utils'.build_ignore_ag(vim.g.oneterm_ignore),
     preview = 'ag --color -n -C 8 -Q -- {-1} {1}',
     delimiter = ':',
     output_format = '+{2} {1}'
@@ -73,7 +73,7 @@ end
 
 function rg()
   return main {
-    cmd = "rg --hidden -n .",
+    cmd = "rg --hidden -n ." .. require'oneterm.utils'.build_ignore_rg(vim.g.oneterm_ignore),
     preview = 'rg -C 10 --color=always -F -- {-1} {1}',
     delimiter = ":",
     output_format = "+{2} {1}"

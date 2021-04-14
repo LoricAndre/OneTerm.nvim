@@ -68,9 +68,28 @@ function init_yank()
   ]], true)
 end
 
+function build_ignore_rg(t)
+  local res = ""
+  for _,f in pairs(t) do
+    res = res .. " --ignore-file <(echo '" .. f .. "')"
+  end
+  return res
+end
+
+function build_ignore_ag(t)
+  local res = ""
+  for _,f in pairs(t) do
+    res = res .. " -p <(echo '" .. f .. "')"
+  end
+  return res
+
+end
+
 return {
   getopts = getopts,
   gettmp = gettmp,
   lsp = lsp,
-  init_yank = init_yank
+  init_yank = init_yank,
+  build_ignore_ag = build_ignore_ag,
+  build_ignore_rg = build_ignore_rg
 }

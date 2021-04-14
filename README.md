@@ -63,6 +63,7 @@ OneTerm's window is configurable using the following variables. You can set them
  - `oneterm_width_ratio` and `oneterm_height_ratio` set the width and height ratios. These should be set to numbers between 0 (for no window) and 1 (window fills the editor)
  - `oneterm_margin_left` and `oneterm_margin_top` set the margins, these are ratios and should be set to numbers between 0 and 1 like the ratios
  - `oneterm_yank` needs to be set to |true| to be able to use the yank command !
+ - `oneterm_ignore` is a table/array of gitignore-type patterns.
 
 ## Using the framework
 Each of the commands calls the same lua function, accessible using `lua require('oneterm').main(arg_object)`.<br>
@@ -85,7 +86,7 @@ Check [init.lua](https://github.com/LoricAndre/oneterm/blob/main/lua/oneterm/ini
     - [x] Yanks
     - [x] Makefile targets
     - [ ] Anything you might need
-- [ ] Add a way to ignore files, e.g. for `files`, `rg` and `ag`
+- [x] Add a way to ignore files, e.g. for `files`, `rg` and `ag`
 - [ ] Add configuration for prompt & other visual aspects, including border in latest version.
 
 
