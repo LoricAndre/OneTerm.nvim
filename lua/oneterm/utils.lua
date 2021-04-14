@@ -73,7 +73,7 @@ end
 
 function build_ignore_rg(t)
   local res = ""
-  for _,f in pairs(t or nil) do
+  for _,f in pairs(t or {}) do
     res = res .. " --ignore-file <(echo '" .. f .. "')"
   end
   return res
@@ -81,7 +81,7 @@ end
 
 function build_ignore_ag(t)
   local res = ""
-  for _,f in pairs(t or nil) do
+  for _,f in pairs(t or {}) do
     res = res .. " -p <(echo '" .. f .. "')"
   end
   return res
