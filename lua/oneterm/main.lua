@@ -25,10 +25,8 @@ return function(a)
     f:close()
     cmd = "cat " .. tmp .. "/onetermcmd"
   end
-  local options = vim.g.oneterm_options or {}
   return require'oneterm.term'.open({
     cmd = cmd,
     matcher = matcher,
-    options = options
   })
 end
