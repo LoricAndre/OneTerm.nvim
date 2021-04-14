@@ -85,7 +85,7 @@ Check [init.lua](https://github.com/LoricAndre/oneterm/blob/main/lua/oneterm/ini
     - [x] branches for git branches (and checkout)
     - [x] Yanks
     - [x] Makefile targets
-    - [ ] Anything you might need
+    - [ ] Add anything you might need [here](https://github.com/LoricAndre/oneterm/issues/2)
 - [x] Add a way to ignore files, e.g. for `files`, `rg` and `ag`
 - [ ] Add configuration for prompt & other visual aspects, including border in latest version.
 
