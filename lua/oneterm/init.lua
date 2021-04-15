@@ -196,5 +196,6 @@ return {
   ranger = ranger,
   make = make,
   yanks = yanks,
-  branches = branches
+  branches = branches,
+  term = term
 }
