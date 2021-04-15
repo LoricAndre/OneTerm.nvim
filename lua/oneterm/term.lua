@@ -12,14 +12,15 @@ function open(a)
   local term_cmd = ":term " .. cmd .. a.matcher .. " | tee " .. tmp .. "/oneterm"
   local buf = a.buf or vim.api.nvim_create_buf(false, true)
   local win = vim.api.nvim_open_win(buf, true, opt)
+  persist = a.persist or false
   vim.cmd(term_cmd)
   vim.cmd(":start") -- Enter insert mode
-  local close_cmd = string.format(":au TermClose <buffer> :lua require'oneterm.term'.close{win=%d, buf=%d}", win, buf) -- pass window and buffer handles
+  local close_cmd = string.format(":au TermClose <buffer> :lua require'oneterm.term'.close{win=%d, buf=%d, persist=%b}", win, buf, persist) -- pass window and buffer handles
   vim.cmd(close_cmd)
 end
 function close(a)
   vim.api.nvim_win_close(a.win, true)
-  if vim.api.nvim_buf_is_valid(a.buf) then
+  if not a.persist and vim.api.nvim_buf_is_valid(a.buf) then
     vim.api.nvim_buf_delete(a.buf, {force = true})
   end
   local tmp = utils.gettmp()
