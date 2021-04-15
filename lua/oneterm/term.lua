@@ -20,7 +20,7 @@ function open(a)
     vim.cmd(term_cmd)
   end
   vim.cmd(":start") -- Enter insert mode
-  local close_cmd = string.format(":au TermClose <buffer> :lua require'oneterm.term'.close{win=%d, buf=%d, persist=%s}", win, buf, persist) -- pass window and buffer handles
+  local close_cmd = string.format(":au TermClose <buffer> :lua require'oneterm.term'.close{win=%d, buf=%d, persist=%s}", win, buf, a.persist) -- pass window and buffer handles
   vim.cmd(close_cmd)
 end
 function close(a)
