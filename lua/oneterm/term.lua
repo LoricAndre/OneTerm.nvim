@@ -14,20 +14,21 @@ function open(a)
   local buf = a.buf
   if a.buf == nil or not vim.api.nvim_buf_is_valid(a.buf) then
     buf = vim.api.nvim_create_buf(false, false)
-    vim.cmd(term_cmd)
     if a.persist then
       vim.g.oneterm_term_buf = buf
     end
+    vim.cmd(term_cmd)
   end
   vim.cmd(":start") -- Enter insert mode
   local close_cmd = string.format(":au TermClose <buffer> :lua require'oneterm.term'.close{win=%d, buf=%d, persist=%s}", win, buf, persist) -- pass window and buffer handles
   vim.cmd(close_cmd)
 end
 function close(a)
+  print(type(a.persist))
   if vim.api.nvim_win_is_valid(a.win) then
     vim.api.nvim_win_close(a.win, true)
   end
-  if not a.persist and vim.api.nvim_buf_is_valid(a.buf) then
+  if (not a.persist) and vim.api.nvim_buf_is_valid(a.buf) then
     vim.api.nvim_buf_delete(a.buf, {force = true})
   end
   local tmp = utils.gettmp()
