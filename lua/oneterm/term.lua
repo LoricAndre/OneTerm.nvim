@@ -14,6 +14,7 @@ function open(a)
   local win = vim.api.nvim_open_win(buf, true, opt)
   persist = a.persist or false
   if persist then
+    print(buf, " will be persistant")
     vim.g.oneterm_term_buf = buf
   end
   vim.cmd(term_cmd)
