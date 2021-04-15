@@ -24,6 +24,7 @@ end
 function close(a)
   vim.api.nvim_win_close(a.win, true)
   if not a.persist and vim.api.nvim_buf_is_valid(a.buf) then
+    print("deleting buf n°", a.buf)
     vim.api.nvim_buf_delete(a.buf, {force = true})
   end
   local tmp = utils.gettmp()
