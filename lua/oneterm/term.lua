@@ -12,8 +12,12 @@ function open(a)
   local term_cmd = ":term " .. cmd .. a.matcher .. " | tee " .. tmp .. "/oneterm"
   local buf = a.buf or vim.api.nvim_create_buf(false, false)
   local win = vim.api.nvim_open_win(buf, true, opt)
-  if a.persist and a.buf == nil then
-    vim.g.oneterm_term_buf = buf
+  if a.persist then
+    if a.buf == nil then
+      vim.g.oneterm_term_buf = buf
+      vim.cmd(term_cmd)
+    end
+  else
     vim.cmd(term_cmd)
   end
   vim.cmd(":start") -- Enter insert mode
@@ -21,7 +25,9 @@ function open(a)
   vim.cmd(close_cmd)
 end
 function close(a)
-  vim.api.nvim_win_close(a.win, true)
+  if vim.api.nvim_win_is_valid(a.win) then
+    vim.api.nvim_win_close(a.win, true)
+  end
   if not a.persist and vim.api.nvim_buf_is_valid(a.buf) then
     vim.api.nvim_buf_delete(a.buf, {force = true})
   end
