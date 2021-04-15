@@ -12,7 +12,7 @@ function open(a)
   local term_cmd = ":term " .. cmd .. a.matcher .. " | tee " .. tmp .. "/oneterm"
   local buf = a.buf or vim.api.nvim_create_buf(false, true)
   local win = vim.api.nvim_open_win(buf, true, opt)
-  if persist then
+  if a.persist then
     vim.g.oneterm_term_buf = buf
   end
   vim.cmd(term_cmd)
