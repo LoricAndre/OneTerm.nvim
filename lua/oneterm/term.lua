@@ -10,12 +10,13 @@ function open(a)
   end
   -- create terminal
   local term_cmd = ":term " .. cmd .. a.matcher .. " | tee " .. tmp .. "/oneterm"
-  local buf = a.buf or vim.api.nvim_create_buf(false, true)
+  local buf = a.buf or vim.api.nvim_create_buf(false, false)
   local win = vim.api.nvim_open_win(buf, true, opt)
   if a.persist then
     vim.g.oneterm_term_buf = buf
+  else
+    vim.cmd(term_cmd)
   end
-  vim.cmd(term_cmd)
   vim.cmd(":start") -- Enter insert mode
   local close_cmd = string.format(":au TermClose <buffer> :lua require'oneterm.term'.close{win=%d, buf=%d, persist=%s}", win, buf, persist) -- pass window and buffer handles
   vim.cmd(close_cmd)
