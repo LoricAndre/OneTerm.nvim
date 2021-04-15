@@ -13,7 +13,7 @@ function open(a)
   local win = vim.api.nvim_open_win(buf, true, opt)
   local buf = a.buf
   if a.buf == nil or not vim.api.nvim_buf_is_valid(a.buf) then
-    buf = vim.api.nvim_create_buf(false, false)
+    buf = vim.api.nvim_create_buf(true, true)
     if a.persist then
       vim.g.oneterm_term_buf = buf
     end
@@ -24,7 +24,6 @@ function open(a)
   vim.cmd(close_cmd)
 end
 function close(a)
-  print(type(a.persist))
   if vim.api.nvim_win_is_valid(a.win) then
     vim.api.nvim_win_close(a.win, true)
   end
