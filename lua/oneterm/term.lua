@@ -13,7 +13,7 @@ function open(a)
   local buf = a.buf or vim.api.nvim_create_buf(false, false)
   local win = vim.api.nvim_open_win(buf, true, opt)
   if a.persist then
-    if a.buf == nil then
+    if a.buf == nil or not vim.api.nvim_buf_is_valid(a.buf) then
       vim.g.oneterm_term_buf = buf
       vim.cmd(term_cmd)
     end
