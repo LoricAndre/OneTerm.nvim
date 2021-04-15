@@ -18,7 +18,6 @@ function open(a)
     if a.persist then
       vim.g.oneterm_term_buf = buf
     end
-    end
   end
   vim.cmd(":start") -- Enter insert mode
   local close_cmd = string.format(":au TermClose <buffer> :lua require'oneterm.term'.close{win=%d, buf=%d, persist=%s}", win, buf, persist) -- pass window and buffer handles
