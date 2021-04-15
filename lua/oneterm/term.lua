@@ -13,6 +13,7 @@ function open(a)
   local buf = a.buf or vim.api.nvim_create_buf(false, true)
   local win = vim.api.nvim_open_win(buf, true, opt)
   persist = a.persist or false
+  print(persist)
   if persist then
     print(buf, " will be persistant")
     vim.g.oneterm_term_buf = buf
