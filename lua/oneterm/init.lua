@@ -169,6 +169,14 @@ function branches()
   }
 end
 
+function term()
+  return main {
+    buf = tonumber(vim.g.oneterm_term_buf),
+    cmd = os.getenv("SHELL") or "bash",
+    matcher = "true"
+  }
+end
+
 return {
   default = default,
   files = files,

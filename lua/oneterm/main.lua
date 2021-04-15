@@ -27,6 +27,7 @@ return function(a)
     cmd = "cat " .. tmp .. "/onetermcmd"
   end
   return require'oneterm.term'.open({
+    buf = a.buf,
     cmd = cmd,
     matcher = matcher,
   })

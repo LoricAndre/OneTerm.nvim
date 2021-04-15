@@ -10,7 +10,7 @@ function open(a)
   end
   -- create terminal
   local term_cmd = ":term " .. cmd .. a.matcher .. " | tee " .. tmp .. "/oneterm"
-  local buf = vim.api.nvim_create_buf(false, true)
+  local buf = a.buf or vim.api.nvim_create_buf(false, true)
   local win = vim.api.nvim_open_win(buf, true, opt)
   vim.cmd(term_cmd)
   vim.cmd(":start") -- Enter insert mode
