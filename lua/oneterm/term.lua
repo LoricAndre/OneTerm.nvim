@@ -15,7 +15,7 @@ function open(a)
   if a.buf == nil or not vim.api.nvim_buf_is_valid(a.buf) then
     buf = vim.api.nvim_create_buf(true, true)
     if a.persist then
-      vim.g.oneterm_term_buf = buf
+      vim.g.oneterm_term_buf = buf + 1
     end
     vim.cmd(term_cmd)
   end
