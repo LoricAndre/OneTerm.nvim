@@ -52,6 +52,8 @@ command. Completion is enabled.
  - `yank` : list yank history and paste it at the cursor on `<CR>` or `<C-p>`
    , yank it to `+` register on `<C-y>`
  - `branches` : list git branches and switch to selected
+ - `term` : open a floating terminal. When calling the command again,
+ the same terminal instance will reopen unless you exit the shell.
 
 ===============================================================================
 5. Configuration                                        *oneterm-configuration*

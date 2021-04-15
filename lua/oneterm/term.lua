@@ -13,14 +13,14 @@ function open(a)
   local buf = a.buf
   local win
   if a.buf == nil or not vim.api.nvim_buf_is_valid(a.buf) then
-    buf = vim.api.nvim_create_buf(true, true)
+    buf = vim.api.nvim_create_buf(false, true)
     if a.persist then
-      vim.g.oneterm_term_buf = buf + 1 -- lua buf handle and vim bufnr differ.
+      vim.g.oneterm_term_buf = buf
     end
     win = vim.api.nvim_open_win(buf, true, opt)
     vim.cmd(term_cmd)
   else
-    win = vim.api.nvim_open_win(buf, true, opt)
+    win = vim.api.nvim_open_win(a.buf, true, opt)
   end
   vim.cmd(":start") -- Enter insert mode
   local close_cmd = string.format(":au TermClose <buffer> :lua require'oneterm.term'.close{win=%d, buf=%d, persist=%s}", win, buf, a.persist) -- pass window and buffer handles
