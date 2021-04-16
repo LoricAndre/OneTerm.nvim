@@ -48,6 +48,7 @@ Install the plugin using your favorite package manager (or whatever way you deem
  - `ag` : find lines in files using the silver searcher
  - `rg` : find lines in files using ripgrep
  - `commits` : browse git log (nothing special happens on exit)
+ - `bcommits` : same as `commits`, but restrict to current file. The preview panel will show the whole diff for each commit, but the current file is at the top of the diff.
  - `references` : browse (and jump to) references of the keyword under the cursor using neovim's built-in lsp
  - `symbols` : browse (and jump to) lsp symbols in the current file
  - `ws_symbols` : same as `symbols` but for the entire workspace
