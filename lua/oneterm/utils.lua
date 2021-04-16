@@ -71,7 +71,7 @@ function init_yank()
   return vim.api.nvim_exec([[
     augroup Oneterm
       au!
-      au TextYankPost * redir! >> ]] .. gettmp() .. [[/onetermyanks | echo v:event.regcontents[0] | redir end
+      au TextYankPost * redir! >> ]] .. gettmp() .. [[/onetermyanks | silent echo v:event.regcontents[0] | redir end
     augroup END
   ]], true)
 end
