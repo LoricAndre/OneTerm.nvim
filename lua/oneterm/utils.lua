@@ -60,7 +60,8 @@ function lsp(a)
     for _, symbol in pairs(items) do
     if not string.match(symbol.text, "<Anonymous>$") then
         local filename = vim.fn.fnamemodify(symbol.filename, ':~:.')
-      	return_value = return_value .. symbol.filename .. " " .. symbol.lnum .. " " .. symbol.text .. "\n"
+        print(filename)
+      	return_value = return_value .. filename .. " " .. symbol.lnum .. " " .. symbol.text .. "\n"
       end
     end
   end
