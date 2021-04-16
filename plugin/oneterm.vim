@@ -8,6 +8,7 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \ag\n
         \rg\n
         \commits\n
+        \bcommits\n
         \references\n
         \symbols\n
         \ws_symbols\n

@@ -199,6 +199,7 @@ return {
   ag = ag,
   rg = rg,
   commits = commits,
+  bcommits = bcommits,
   files_or_git_files = files_or_git_files,
   references = references,
   symbols = symbols,
