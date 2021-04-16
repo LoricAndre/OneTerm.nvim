@@ -16,6 +16,10 @@ function open(a)
     buf = vim.api.nvim_create_buf(false, true)
     if a.persist then
       vim.g.oneterm_term_buf = buf
+      vim.cmd [[
+      augroup Oneterm
+        au ExitPre * silent bw! ]] .. buf .. [[
+      augroup END]]
     end
     win = vim.api.nvim_open_win(buf, true, opt)
     vim.cmd(term_cmd)
