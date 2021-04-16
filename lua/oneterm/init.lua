@@ -104,7 +104,8 @@ function references()
 	  type = 'locations'
 	}
     end,
-    preview = "bat --highlight-line {2} -r{2}: {1} --color=always"
+    preview = "bat --highlight-line {2} -r{2}: {1} --color=always",
+    format = "+{2} {1}"
   }
 end
 
@@ -116,7 +117,8 @@ function symbols()
 	  type = 'symbols'
 	}
     end,
-    preview = "bat --highlight-line {2} -r{2}: {1} --color=always"
+    preview = "bat --highlight-line {2} -r{2}: {1} --color=always",
+    format = "+{2} {1}"
   }
 end
 
@@ -128,7 +130,8 @@ function ws_symbols()
 	  type = 'symbols'
 	}
     end,
-    preview = "bat --highlight-line {2} -r{2}: {1} --color=always"
+    preview = "bat --highlight-line {2} -r{2}: {1} --color=always",
+    format = "+{2} {1}"
   }
 end
 
