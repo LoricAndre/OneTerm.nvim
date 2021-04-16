@@ -23,7 +23,7 @@ function buffers()
     cmd = function()
       return vim.api.nvim_exec("ls", true)
     end,
-    preview = 'bat --color=always -r{-1}: $(echo {-3} | tr -d \\")',
+    preview = 'bat --color=always -H{-1} $(echo {-3} | tr -d \\")',
     output_format = '\\\\#{1}'
   }
 end
@@ -40,7 +40,7 @@ function lines()
       end
       return lines
     end,
-    preview = 'bat --color=always -r{2}: ${1}',
+    preview = 'bat --color=always -H{2} ${1}',
     delimiter = ':',
     output_format = '+{2} {1}'
   }
@@ -56,7 +56,7 @@ function blines()
       end
       return lines
     end,
-    preview = 'bat --color=always -r{1}: ' .. file,
+    preview = 'bat --color=always -H{1} ' .. file,
     delimiter = ':',
     output_format = '+{1} ' .. file
   }
@@ -65,7 +65,7 @@ end
 function ag()
   return main {
     cmd = "ag --nobreak --noheading '.+' ." .. require'oneterm.utils'.build_ignore_ag(vim.g.oneterm_ignore),
-    preview = 'ag --color -n -C 8 -Q -- {-1} {1}',
+    preview = 'bat --color=always -H{2} {1}',
     delimiter = ':',
     output_format = '+{2} {1}'
   }
@@ -74,7 +74,7 @@ end
 function rg()
   return main {
     cmd = "rg --hidden -n ." .. require'oneterm.utils'.build_ignore_rg(vim.g.oneterm_ignore),
-    preview = 'rg -C 10 --color=always -F -- {-1} {1}',
+    preview = 'bat --color=always -H{2} {1}',
     delimiter = ":",
     output_format = "+{2} {1}"
   }
@@ -112,7 +112,7 @@ function references()
 	  type = 'locations'
 	}
     end,
-    preview = "bat --highlight-line {2} -r{2}: {1} --color=always",
+    preview = "bat -H{2} {1} --color=always",
     output_format = "+{2} {1}"
   }
 end
@@ -125,7 +125,7 @@ function symbols()
 	  type = 'symbols'
 	}
     end,
-    preview = "bat --highlight-line {2} -r{2}: {1} --color=always",
+    preview = "bat -H{2} {1} --color=always",
     output_format = "+{2} {1}"
   }
 end
@@ -138,7 +138,7 @@ function ws_symbols()
 	  type = 'symbols'
 	}
     end,
-    preview = "bat --highlight-line {2} -r{2}: {1} --color=always",
+    preview = "bat --highlight-line {2} {1} --color=always",
     output_format = "+{2} {1}"
   }
 end
