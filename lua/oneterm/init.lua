@@ -88,6 +88,14 @@ function commits()
   }
 end
 
+function bcommits()
+  return main {
+    cmd = "git log --oneline --color -- " .. vim.fn.expand("%"),
+    preview = "git show --pretty='\\%Cred\\%H\\%n\\%Cblue\\%an\\%n\\%Cgreen\\%s' --color --rotate-to=" .. vim.fn.expand("%") .. " {1}",
+    output_format = ""
+  }
+end
+
 function files_or_git_files()
   if vim.fn.isdirectory('.git') == 1 then
     return require'oneterm'.git_files()
