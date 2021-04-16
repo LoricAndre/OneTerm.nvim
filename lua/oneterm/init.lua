@@ -147,7 +147,7 @@ end
 function git()
   return main {
     cmd = "gitui && git push",
-    matcher = "true"
+    matcher = "echo edit!"
   }
 end
 
@@ -162,7 +162,7 @@ end
 function make()
   return main {
     cmd = vim.o.makeprg .. " -qp | awk -F':' '/^[a-zA-Z0-9][^$\\#\\/\\t=]*:([^=]|$)/ {split($1,A,/ /);for(i in A)print A[i]}'",
-    matcher = "fzf | xargs " .. vim.o.makeprg .. " && echo 'press any key to continue' && read"
+    matcher = "fzf | xargs " .. vim.o.makeprg .. " && echo 'press any key to continue' && read && echo 'edit!'"
   }
 end
 
