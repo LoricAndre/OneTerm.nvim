@@ -102,6 +102,7 @@ function build_from_table(t)
   for k, v in pairs(t) do
     res = res .. k .. "\t" .. v .. "\n"
   end
+  return res
 end
 
 return {
