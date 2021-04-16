@@ -19,7 +19,8 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \branches\n
         \term\n
         \oldfiles\n
-        \history
+        \history\n
+        \snippets
         \"
 endfunction
 
