@@ -30,6 +30,7 @@ navigate files and more.
 3. Usage                                                        *oneterm-usage*
 Install the package using your favorite method, then use the `:OneTerm`
 command. Completion is enabled.
+Using the `term` command also requires you to have `hidden` set : `set hidden`
 
 ===============================================================================
 4. Commands                                                  *oneterm-commands*

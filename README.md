@@ -36,6 +36,7 @@ Credits to all the devs of those projects :heart:.
 
 ## Usage
 Install the plugin using your favorite package manager (or whatever way you deem best). Then, all you have to do is type `:OneTerm <Tab>` and browse through the commands.
+Using the `term` command also requires you to have `hidden` set : `set hidden`
 
 ## Implemented commands
  - empty : default fzf command, defined by `$FZF_DEFAULT_COMMAND`
