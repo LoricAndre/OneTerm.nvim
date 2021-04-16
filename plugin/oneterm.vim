@@ -16,7 +16,8 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \ranger\n
         \make\n
         \yanks\n
-        \branches
+        \branches\n
+        \term
         \"
 endfunction
 
