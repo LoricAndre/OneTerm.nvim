@@ -212,6 +212,15 @@ function history()
   }
 end
 
+function snippets()
+  return main {
+    cmd = function()
+      return utils.build_from_table(vim.fn["UltiSnips#SnippetsInCurrentScope(1)"]
+    end,
+    matcher = "fzf --tac --bind 'enter:execute(echo normal! a{2}\<C-r>=UltiSnips#ExpandSnippet()\<CR>)+abort'"
+  }
+end
+
 return {
   default = default,
   files = files,
@@ -234,5 +243,6 @@ return {
   branches = branches,
   term = term,
   oldfiles = oldfiles,
-  history = history
+  history = history,
+  snippets = snippets,
 }
