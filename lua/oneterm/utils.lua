@@ -47,7 +47,7 @@ function lsp(a)
   local params = vim.lsp.util.make_position_params()
   params.query = ""
   params.context = {includeDeclaration = true}
-  local timeout = 10000
+  local timeout = 1500
   local symbols = vim.lsp.buf_request_sync(0, a.query, params, timeout)
   local return_value = ""
   for _, res in pairs(symbols) do
