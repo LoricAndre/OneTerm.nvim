@@ -217,5 +217,6 @@ return {
   make = make,
   yanks = yanks,
   branches = branches,
-  term = term
+  term = term,
+  oldfiles = oldfiles
 }

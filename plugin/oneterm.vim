@@ -17,7 +17,8 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \make\n
         \yanks\n
         \branches\n
-        \term
+        \term\n
+        \oldfiles
         \"
 endfunction
 
