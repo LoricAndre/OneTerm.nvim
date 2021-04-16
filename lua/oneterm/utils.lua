@@ -97,6 +97,13 @@ function build_from_list(l)
   return table.concat(l, "\n")
 end
 
+function build_from_table(t)
+  local res = ""
+  for k, v in pairs(t) do
+    res = res .. k .. "\t" .. v .. "\n"
+  end
+end
+
 return {
   getopts = getopts,
   gettmp = gettmp,
@@ -104,5 +111,6 @@ return {
   init_yank = init_yank,
   build_ignore_ag = build_ignore_ag,
   build_ignore_rg = build_ignore_rg,
-  build_from_list = build_from_list
+  build_from_list = build_from_list,
+  build_from_table = build_from_table,
 }
