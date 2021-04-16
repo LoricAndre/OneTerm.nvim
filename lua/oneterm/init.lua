@@ -208,7 +208,7 @@ function history()
       end
       return utils.build_from_list(l)
     end,
-    matcher = "fzf --bind 'enter:execute(echo {})'"
+    matcher = "fzf --tac"
   }
 end
 
