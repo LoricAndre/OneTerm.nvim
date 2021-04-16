@@ -231,5 +231,6 @@ return {
   yanks = yanks,
   branches = branches,
   term = term,
-  oldfiles = oldfiles
+  oldfiles = oldfiles,
+  history = history
 }
