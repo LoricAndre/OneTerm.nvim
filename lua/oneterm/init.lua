@@ -217,9 +217,12 @@ function snippets()
     cmd = function()
       return utils.build_from_table(vim.fn["UltiSnips#SnippetsInCurrentScope"](1))
     end,
-    matcher = "fzf --tac --bind 'enter:execute(echo execute \"normal! a{2}\\<C-r>=UltiSnips#ExpandSnippet()\\<CR>\")+abort'"
+    matcher = [[fzf --tac --bind "enter:execute(echo execute \"\\\"normal! a\"{1}\"\<C-r>=UltiSnips\#ExpandSnippet()\<CR>\\\"\")+abort"]],
+    separator = "\t"
   }
 end
+
+
 
 return {
   default = default,

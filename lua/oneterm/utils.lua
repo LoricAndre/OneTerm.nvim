@@ -72,6 +72,7 @@ function init_yank()
     augroup Oneterm
       au!
       au TextYankPost * redir! >> ]] .. gettmp() .. [[/onetermyanks | silent echo v:event.regcontents[0] | redir end
+      au ExitPre * silent bw! ]] .. vim.g.oneterm_term_buf .. [[
     augroup END
   ]], true)
 end

@@ -61,6 +61,8 @@ Using the `term` command also requires you to have `hidden` set : `set hidden`
  - `term` : open a floating terminal. When calling the command again, the same terminal instance will reopen unless you exit the shell.
  - `oldfiles` : list previously opened files
  - `history` : list command history and run selected command
+ - `snippets` : list available snippets (uses [UltiSnips](https://github.com/SirVer/UltiSnips)) and expand selection.
+  Currently, this won't expand the snippet if there are other possibilities (for example, `elif` won't be expanded because `if` exists).   
 
 ## Configuration
 OneTerm's window is configurable using the following variables. You can set them using either `let g:var` from vimscript or `vim.g.var` from lua.
