@@ -176,7 +176,7 @@ end
 function branches()
   return main {
     cmd = "git branch",
-    matcher = "fzf --ansi | xargs git switch && echo 'edit!'"
+    matcher = "fzf --ansi | xargs git switch; echo 'edit!'",
   }
 end
 
@@ -185,7 +185,15 @@ function term()
     buf = vim.g.oneterm_term_buf,
     cmd = (os.getenv("SHELL") or "bash") .. " && true",
     matcher = "true",
-    persist = true
+    persist = true,
+  }
+end
+
+function oldfiles()
+  return main {
+    cmd = function()
+      return require'oneterm.utils'.build_from_list(vim.v.oldfiles)
+    end
   }
 end
 
