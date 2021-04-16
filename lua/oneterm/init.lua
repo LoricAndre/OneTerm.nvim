@@ -208,7 +208,8 @@ function history()
       return l
     end,
     matcher = "fzf --bind 'enter:execute(echo {})'"
-    }
+  }
+end
 
 return {
   default = default,
