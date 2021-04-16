@@ -185,7 +185,7 @@ function term()
   return main {
     buf = vim.g.oneterm_term_buf,
     cmd = (os.getenv("SHELL") or "bash") .. " && true",
-    matcher = "true",
+    matcher = "echo 'edit!'",
     persist = true,
   }
 end
