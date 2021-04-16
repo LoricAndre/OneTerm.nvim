@@ -18,7 +18,8 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \yanks\n
         \branches\n
         \term\n
-        \oldfiles
+        \oldfiles\n
+        \history
         \"
 endfunction
 

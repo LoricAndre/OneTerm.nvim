@@ -58,6 +58,7 @@ command. Completion is enabled.
  - `term` : open a floating terminal. When calling the command again,
  the same terminal instance will reopen unless you exit the shell.
  - `oldfiles` : list previously opened files
+ - `history` : list command history and run selected command
 
 ===============================================================================
 5. Configuration                                        *oneterm-configuration*
