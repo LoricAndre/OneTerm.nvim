@@ -93,11 +93,16 @@ function build_ignore_ag(t)
 
 end
 
+function build_from_list(l)
+  return table.concat(l, "\n")
+end
+
 return {
   getopts = getopts,
   gettmp = gettmp,
   lsp = lsp,
   init_yank = init_yank,
   build_ignore_ag = build_ignore_ag,
-  build_ignore_rg = build_ignore_rg
+  build_ignore_rg = build_ignore_rg,
+  build_from_list = build_from_list
 }
