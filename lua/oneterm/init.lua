@@ -82,8 +82,8 @@ end
 
 function commits()
   return main {
-    cmd = "git log --pretty=oneline",
-    preview = "git show --pretty='\\%Cred\\%H\\%n\\%Cblue\\%an\\%n\\%Cgreen\\%s' {1}",
+    cmd = "git log --oneline --color",
+    preview = "git show --pretty='\\%Cred\\%H\\%n\\%Cblue\\%an\\%n\\%Cgreen\\%s' --color {1}",
     output_format = ""
   }
 end
