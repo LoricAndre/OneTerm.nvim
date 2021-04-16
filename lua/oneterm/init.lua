@@ -1,5 +1,6 @@
 local vim = vim
 local main = require 'oneterm.main'
+local utils = require 'oneterm.utils'
 
 function default()
   return main{}
@@ -7,7 +8,7 @@ end
 
 function files()
   return main {
-    cmd = "rg --files --hidden ." .. require'oneterm.utils'.build_ignore_rg(vim.g.oneterm_ignore)
+    cmd = "rg --files --hidden ." .. utils.build_ignore_rg(vim.g.oneterm_ignore)
   }
 end
 
@@ -64,7 +65,7 @@ end
 
 function ag()
   return main {
-    cmd = "ag --nobreak --noheading '.+' ." .. require'oneterm.utils'.build_ignore_ag(vim.g.oneterm_ignore),
+    cmd = "ag --nobreak --noheading '.+' ." .. utils.build_ignore_ag(vim.g.oneterm_ignore),
     preview = 'bat --color=always -H{2} -r{2}: {1}',
     delimiter = ':',
     output_format = '+{2} {1}'
@@ -73,7 +74,7 @@ end
 
 function rg()
   return main {
-    cmd = "rg --hidden -n ." .. require'oneterm.utils'.build_ignore_rg(vim.g.oneterm_ignore),
+    cmd = "rg --hidden -n ." .. utils.build_ignore_rg(vim.g.oneterm_ignore),
     preview = 'bat --color=always -H{2} -r{2}: {1}',
     delimiter = ":",
     output_format = "+{2} {1}"
@@ -107,7 +108,7 @@ end
 function references()
   return main {
     cmd = function()
-      return require'oneterm.utils'.lsp {
+      return utils.lsp {
       	  query = 'textDocument/references',
 	  type = 'locations'
 	}
@@ -120,7 +121,7 @@ end
 function symbols()
   return main {
     cmd = function()
-      return require'oneterm.utils'.lsp {
+      return utils.lsp {
           query = 'textDocument/documentSymbol',
 	  type = 'symbols'
 	}
@@ -133,7 +134,7 @@ end
 function ws_symbols()
   return main {
     cmd = function()
-      return require'oneterm.utils'.lsp {
+      return utils.lsp {
           query = 'workspace/symbol',
 	  type = 'symbols'
 	}
@@ -151,7 +152,7 @@ function git()
 end
 
 function ranger()
-  local tmp = require'oneterm.utils'.gettmp()
+  local tmp = utils.gettmp()
   return main {
     cmd = "ranger --choosefile="..tmp.."/fztermranger && true",
     matcher = 'echo "edit $(cat '..tmp..'/fztermranger)"'
@@ -166,7 +167,7 @@ function make()
 end
 
 function yanks()
-  local tmp = require'oneterm.utils'.gettmp()
+  local tmp = utils.gettmp()
   return main {
     cmd = "cat " .. tmp .. "/onetermyanks",
     matcher = "fzf --bind 'ctrl-p:execute(echo r !echo {})+abort,ctrl-y:execute(echo let @+={})+abort,enter:execute(echo r !echo {})+abort' --tac"
@@ -192,7 +193,7 @@ end
 function oldfiles()
   return main {
     cmd = function()
-      return require'oneterm.utils'.build_from_list(vim.v.oldfiles)
+      return utils.build_from_list(vim.v.oldfiles)
     end
   }
 end
@@ -205,7 +206,7 @@ function history()
       for i = 1,N do
         l[i] = vim.fn.histget(":", i)
       end
-      return l
+      return utils.build_from_list(l)
     end,
     matcher = "fzf --bind 'enter:execute(echo {})'"
   }
