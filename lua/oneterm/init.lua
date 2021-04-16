@@ -197,6 +197,19 @@ function oldfiles()
   }
 end
 
+function history()
+  return main {
+    cmd = function()
+      local N = vim.fn.histnr(":")
+      local l = {}
+      for i = 1,N do
+        l[i] = vim.fn.histget(":", i)
+      end
+      return l
+    end,
+    matcher = "fzf --bind 'enter:execute(echo {})'"
+    }
+
 return {
   default = default,
   files = files,
