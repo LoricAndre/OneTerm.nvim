@@ -49,7 +49,7 @@ command. Completion is enabled.
    (gitui's push feature isn't working for me, I'd love feedback on this)
  - `ranger` : open ranger and edit selected file
  - `make` : list makefile targets and run selected
- - `yank` : list yank history and paste it at the cursor on `<CR>` or `<C-p>`
+ - `yanks` : list yank history and paste it at the cursor on `<CR>` or `<C-p>`
    , yank it to `+` register on `<C-y>`
  - `branches` : list git branches and switch to selected
  - `term` : open a floating terminal. When calling the command again,
