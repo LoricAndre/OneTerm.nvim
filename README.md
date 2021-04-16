@@ -58,6 +58,7 @@ Install the plugin using your favorite package manager (or whatever way you deem
  - `yanks` : list yank history and paste it at the cursor on `<CR>` or `<C-p>`, yank to `+` register on `<C-y>`
  - `branches` : list git branches and switch to selected
  - `term` : open a floating terminal. When calling the command again, the same terminal instance will reopen unless you exit the shell.
+ - `oldfiles` : list previously opened files
 
 ## Configuration
 OneTerm's window is configurable using the following variables. You can set them using either `let g:var` from vimscript or `vim.g.var` from lua.
