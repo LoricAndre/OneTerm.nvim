@@ -169,7 +169,7 @@ function yanks()
   local tmp = require'oneterm.utils'.gettmp()
   return main {
     cmd = "cat " .. tmp .. "/onetermyanks",
-    matcher = "fzf --bind 'ctrl-p:execute(echo r !echo {})+abort,ctrl-y:execute(echo let @+={})+abort,enter:execute(echo r !echo {})+abort'"
+    matcher = "fzf --bind 'ctrl-p:execute(echo r !echo {})+abort,ctrl-y:execute(echo let @+={})+abort,enter:execute(echo r !echo {})+abort' --tac"
   }
 end
 
