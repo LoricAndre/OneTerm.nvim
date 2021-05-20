@@ -221,6 +221,9 @@ function snippets()
   }
 end
 
+function sessions()
+end
+
 
 return {
   default = default,
