@@ -20,7 +20,8 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \term\n
         \oldfiles\n
         \history\n
-        \snippets
+        \snippets\n
+        \sessions
         \"
 endfunction
 

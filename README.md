@@ -63,6 +63,7 @@ Using the `term` command also requires you to have `hidden` set : `set hidden`
  - `history` : list command history and run selected command
  - `snippets` : list available snippets (uses [UltiSnips](https://github.com/SirVer/UltiSnips)) and expand selection.
   Currently, this won't expand the snippet if there are other possibilities (for example, `elif` won't be expanded because `if` exists).   
+ - `sessions` : list sessions in `oneterm_sessions_path` and sources the selected one.
 
 ## Configuration
 OneTerm's window is configurable using the following variables. You can set them using either `let g:var` from vimscript or `vim.g.var` from lua.
@@ -72,6 +73,7 @@ OneTerm's window is configurable using the following variables. You can set them
  - `oneterm_ignore` is an array of gitignore-type patterns
  - `oneterm_fzf_prompt` is the prompt used by fzf in oneterm
  - `oneterm_options` is a dictionary/table of window options, see `:help nvim_open_win` for details
+ - `oneterm_sessions_path` should be the path where you store your session files, for example using [fzf-session.vim](https://github.com/dominickng/fzf-session.vim)
 
 ## Using the framework
 Each of the commands calls the same lua function, accessible using `lua require('oneterm').main(arg_object)`.<br>
