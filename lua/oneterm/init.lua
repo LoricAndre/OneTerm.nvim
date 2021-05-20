@@ -222,6 +222,10 @@ function snippets()
 end
 
 function sessions()
+  return main {
+    cmd = "find " .. vim.g.oneterm_sessions_path .. " -name '*.vim'",
+    matcher = "fzf | xargs echo :source"
+  }
 end
 
 
@@ -249,4 +253,5 @@ return {
   oldfiles = oldfiles,
   history = history,
   snippets = snippets,
+  sessions = sessions
 }
