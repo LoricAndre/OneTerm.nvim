@@ -147,7 +147,7 @@ end
 function git()
   return main {
     cmd = "gitui && git push",
-    matcher = ""
+    matcher = "true"
   }
 end
 
