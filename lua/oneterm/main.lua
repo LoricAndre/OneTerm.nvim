@@ -30,6 +30,7 @@ return function(a)
     buf = a.buf,
     cmd = cmd,
     matcher = matcher,
-    persist = a.persist or false
+    persist = a.persist or false,
+    maps = a.maps
   })
 end

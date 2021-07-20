@@ -186,6 +186,9 @@ function term()
     buf = vim.g.oneterm_term_buf,
     cmd = (os.getenv("SHELL") or "bash") .. " && true",
     persist = true,
+    maps = {
+      {'t', '<Esc>', '<C-\\><C-n>:q<CR>'}
+    }
   }
 end
 
