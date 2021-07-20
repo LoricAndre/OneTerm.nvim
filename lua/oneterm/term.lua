@@ -24,7 +24,7 @@ function open(a)
     win = vim.api.nvim_open_win(a.buf, true, opt)
   end
   vim.cmd(":start") -- Enter insert mode
-  for _, mapping in ipairs(a.maps) do
+  for _, mapping in ipairs(a.maps or {}) do
     vim.api.nvim_buf_set_keymap(buf, mapping[1], mapping[2], mapping[3], {noremap = true})
   end
   local close_cmd = string.format(":au TermClose <buffer> :lua require'oneterm.term'.close{win=%d, buf=%d, persist=%s}", win, buf, a.persist) -- pass window and buffer handles
