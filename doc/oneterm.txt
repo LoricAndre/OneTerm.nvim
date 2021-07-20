@@ -24,7 +24,8 @@ navigate files and more.
  - rg for files and rg
  - ag for ag
  - ranger for ranger
- - gitui for git
+ - lazygit for git
+ - gitui for gitui
 
 ===============================================================================
 3. Usage                                                        *oneterm-usage*
@@ -49,7 +50,8 @@ Using the `term` command also requires you to have `hidden` set : `set hidden`
    using neovim's built-in lsp
  - `symbols` : browse (and jump to) lsp symbols in the current file
  - `ws_symbols` : same as `symbols` but for the entire workspace
- - `git` : open gitui and push changes on exit
+ - `git` : opens lazygit (needs lazygit installed)
+ - `gitui` : open gitui and push changes on exit
    (gitui's push feature isn't working for me, I'd love feedback on this)
  - `ranger` : open ranger and edit selected file
  - `make` : list makefile targets and run selected
@@ -101,3 +103,5 @@ accessible using `lua require('oneterm').main(arg_object)`.
    this can be used to set fzf's field delimiter (see `man fzf`) for details
  - `output_format` (optional, defaults to `"{}"`) : 
    this is a string, using fzf-style argument-replacement
+ - `maps` (optional). This should be a table of tables, following the format
+   from `:h nvim_set_keymap`. The mappings will be set on the spawned buffer.

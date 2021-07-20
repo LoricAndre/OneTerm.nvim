@@ -31,7 +31,7 @@ Main difference you'll see with fzterm is the way it is configured and the fact 
 
 ## Requirements
 The base framework is using neovim nightly features, so you need to be using the latest nightly release.<br>
-Most commands require [fzf](https://github.com/junegunn/fzf). `files` and `rg` require [ripgrep](https://github.com/BurntSushi/ripgrep), `ag` requires [the silver searcher](https://github.com/ggreer/the_silver_searcher) and`ranger` requires, well, [ranger](https://github.com/ranger/ranger). `git` uses [gitui](https://github.com/extrawurst/gitui).<br>
+Most commands require [fzf](https://github.com/junegunn/fzf). `files` and `rg` require [ripgrep](https://github.com/BurntSushi/ripgrep), `ag` requires [the silver searcher](https://github.com/ggreer/the_silver_searcher) and`ranger` requires, well, [ranger](https://github.com/ranger/ranger). `git` uses [lazygit](https://github.com/jesseduffield/lazygit) and `gitui` uses [gitui](https://github.com/extrawurst/gitui).<br>
 Credits to all the devs of those projects :heart:.
 
 ## Usage
@@ -53,7 +53,8 @@ Using the `term` command also requires you to have `hidden` set : `set hidden`
  - `references` : browse (and jump to) references of the keyword under the cursor using neovim's built-in lsp
  - `symbols` : browse (and jump to) lsp symbols in the current file
  - `ws_symbols` : same as `symbols` but for the entire workspace
- - `git` : open gitui and push changes on exit (gitui's push feature isn't working for me, I'd love feedback on this)
+ - `git` : opens lazygit (needs lazygit installed)
+ - `gitui` : open gitui and push changes on exit (gitui's push feature isn't working for me, I'd love feedback on this)
  - `ranger` : open ranger and edit selected file
  - `make` : list makefile targets and run selected
  - `yanks` : list yank history and paste it at the cursor on `<CR>` or `<C-p>`, yank to `+` register on `<C-y>`
@@ -83,6 +84,7 @@ Each of the commands calls the same lua function, accessible using `lua require(
  - `matcher` (optional, defaults to `fzf` with args) : this can be set to replace fzf with any other matcher, or `xargs echo` to just use the result of `cmd`
  - `delimiter` (optional, defaults to awk-style) : this can be used to set fzf's field delimiter (see `man fzf`) for details
  - `output_format` (optional, defaults to `"{}"`)this is a string, using fzf-style argument-replacement
+ - `maps` (optional). This should be a table of tables, following the format from `:h nvim_set_keymap`. The mappings will be set on the spawned buffer.
 
 The way this function works is very simple : if `cmd` is a function, it is ran and writes its output to "/tmp/onetermcmd" (or windows' temp dir), then opens a terminal reading from this file and piping it to `matcher` (after having built it) then writing the output to "/tmp/oneterm". If `cmd` is a string, the terminal is opened, running the command inside and piping to the rest of the treatment. 
 Check [init.lua](https://github.com/LoricAndre/oneterm/blob/main/lua/oneterm/init.lua) for examples

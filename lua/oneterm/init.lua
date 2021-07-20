@@ -144,9 +144,16 @@ function ws_symbols()
   }
 end
 
-function git()
+function gitui()
   return main {
     cmd = "gitui && git push && true",
+    matcher = "true"
+  }
+end
+
+function git()
+  return main {
+    cmd = "lazygit && true",
     matcher = "true"
   }
 end

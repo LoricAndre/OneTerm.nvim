@@ -13,6 +13,7 @@ function! Compl(ArgLead, CmdLine, CursorPos)
         \symbols\n
         \ws_symbols\n
         \git\n
+        \gitui\n
         \ranger\n
         \make\n
         \yanks\n
