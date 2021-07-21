@@ -234,7 +234,7 @@ end
 function sessions()
   return main {
     cmd = "find " .. vim.g.oneterm_sessions_path .. " -name '*.vim'",
-    matcher = "fzf | xargs echo :source"
+    matcher = "fzf | sed 's/\\%/\\\\\\%/g;s/\\(.*\\)/:source \\1/'"
   }
 end
 
@@ -255,6 +255,7 @@ return {
   symbols = symbols,
   ws_symbols = ws_symbols,
   git = git,
+  gitui = gitui,
   ranger = ranger,
   make = make,
   yanks = yanks,
