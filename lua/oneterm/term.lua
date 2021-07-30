@@ -24,6 +24,7 @@ function open(a)
     win = vim.api.nvim_open_win(a.buf, true, opt)
   end
   vim.cmd(":start") -- Enter insert mode
+  vim.cmd(":setlocal nobuflisted")
   for _, mapping in ipairs(a.maps or {}) do
     vim.api.nvim_buf_set_keymap(buf, mapping[1], mapping[2], mapping[3], {noremap = true})
   end
