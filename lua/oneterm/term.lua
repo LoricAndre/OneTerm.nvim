@@ -23,6 +23,7 @@ function open(a)
   else
     win = vim.api.nvim_open_win(a.buf, true, opt)
   end
+  vim.bo.filetype = "oneterm"
   vim.cmd(":start") -- Enter insert mode
   vim.cmd(":setlocal nobuflisted")
   for _, mapping in ipairs(a.maps or {}) do
